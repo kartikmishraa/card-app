@@ -1,40 +1,10 @@
-<!-- <h1>{{ title }}</h1> -->
-<!-- <img [src]="JUDE_IMAGE" alt="hey jude" (click)="sayHeyJude()" /> -->
-
-<!-- <app-card
-  [cardTitle]="cardDetails[1].title"
-  [price]="cardDetails[1].price"
-  [cardText]="cardDetails[1].text"
-/>
--->
-
 <section class="pricing py-5">
   <div class="container">
     <div class="row">
-      <!-- <app-card
-        class="col-lg-4"
-        [type]="cardDetails[0].type"
-        [price]="cardDetails[0].price"
-        [features]="cardDetails[0].features"
-      />
-      <app-card
-        class="col-lg-4"
-        [type]="cardDetails[1].type"
-        [price]="cardDetails[1].price"
-        [features]="cardDetails[1].features"
-      />
-      <app-card
-        class="col-lg-4"
-        [type]="cardDetails[2].type"
-        [price]="cardDetails[2].price"
-        [features]="cardDetails[2].features"
-      /> -->
       <app-card
         class="col-lg-4"
         *ngFor="let item of cardDetails"
-        [type]="item.type"
-        [price]="item.price"
-        [features]="item.features"
+        [plan]="item"
       />
     </div>
   </div>

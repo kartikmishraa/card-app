@@ -1,12 +1,10 @@
 import { Component, Input } from '@angular/core';
-import { faCheck, faTimes } from '@fortawesome/free-solid-svg-icons';
-
-// TODO: Use this interface Plan
-interface Plan {
-  type: string;
-  price: number;
-  features: Array<Object>;
-}
+import { Plan } from '../interfaces/plan.interface';
+import {
+  IconDefinition,
+  faCheck,
+  faTimes,
+} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-card',
@@ -14,20 +12,10 @@ interface Plan {
   styleUrls: ['./card.component.scss'],
 })
 export class CardComponent {
-  @Input() public type: string = 'TempTitle';
-  @Input() public price: string = '0';
-  @Input() public features: any = []; // Also fix this, remove "any"
+  // Input Decorator to receive card details
+  @Input() public plan?: Plan;
 
   // Font Awesome Icons
-  faCheck = faCheck;
-  faTimes = faTimes;
-
-  // Class values
-  textMuted: string = 'text-muted';
-  notMuted: string = '';
-
-  // Function to parse string to boolean
-  getBool = (str: string) => {
-    return JSON.parse(str);
-  };
+  faCheck: IconDefinition = faCheck;
+  faTimes: IconDefinition = faTimes;
 }
